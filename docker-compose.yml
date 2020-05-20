@@ -2,8 +2,13 @@ version: "3.3"
 
 services: 
   app:
-    image: phuongminh2303/docker-aws-travis:v1
+    # image: phuongminh2303/docker-aws-travis:v1
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     stdin_open: true
+    volumes:
+      - ./:/app
     ports: 
       - "3000:3000"
     restart: unless-stopped
