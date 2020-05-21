@@ -6,10 +6,10 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY . . 
-RUN npm run build
+COPY . .
+RUN NPM run build
 
-FROM nginx 
+FROM nginx
 EXPOSE 80
 
 CMD ["npm", "start"]
