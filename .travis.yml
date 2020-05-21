@@ -1,0 +1,9 @@
+sudo: required
+services: 
+  - docker
+
+before_install:
+  - docker build -t phuongminh2303/docker-aws-travis -f Dockerfile.dev .
+
+script:
+ - docker run phuongminh2303/docker-aws-travis npm run test -- --coverage
