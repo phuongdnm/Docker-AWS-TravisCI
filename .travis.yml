@@ -10,6 +10,7 @@ script:
 
 deploy:
   provider: elasticbeanstalk
+  edge: true
   region: "ap-southeast-1"
   app: "docker-aws-travis"
   env: "DockerAwsTravis-env"
